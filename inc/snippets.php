@@ -17,7 +17,7 @@ function img($src = false, $attributes = array(), $format = true) {
 	}
 
 	$attr = '';
-	$src  = get_template_directory_uri() . '/'.$src;
+	$src  = get_template_directory_uri() . '/' . $src;
 
 	if(!empty($attributes)) {
 		foreach($attributes as $key => $value) {
