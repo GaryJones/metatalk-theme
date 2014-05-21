@@ -7,11 +7,6 @@
         <meta name="description" content="<?php get_bloginfo('description' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-
-        <script type="text/javascript" src="//use.typekit.net/qdi0udn.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
         <?php wp_head() ?>
 
     </head>
