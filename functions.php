@@ -10,6 +10,15 @@
 require_once('inc/class-plugin-activation.php');
 require_once('inc/plugin-activation.php');
 
+/**
+ * Theme settings. 
+ *  
+ * Settings that can be filled in by us or the user.
+ *
+ */
+
+require_once('inc/theme-options.php');
+
 
 
 /**

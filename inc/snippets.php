@@ -1,6 +1,49 @@
 <?php
 
 /**
+ * Easy loop. 
+ *  
+ * Make looping easier.
+ *
+ * $template_name : the name of the template (without php), place the file in the templates folder
+ * $args : arguments for the loop (http://codex.wordpress.org/Class_Reference/WP_Query)
+ *
+ * example <?php the_loop('events',array('post_type' => 'event')); ?>
+ *
+ */
+
+function the_loop($template_name=false,$args=array('post_type' => 'post')) {
+
+	$template = get_template_directory().'/'.'templates/'.$template_name.'.php';
+
+	if(!file_exists($template)) {
+		echo '<div class="theme-error">Template <i>'.$template.'</i> not found!</div>';
+	}
+
+	$query = new WP_Query($args);
+
+	if($query->have_posts()) {
+
+		while ($query->have_posts()) {
+			$query->the_post();
+
+			include_once($template);
+
+		}
+
+	} else {
+
+		echo '<div class="theme-error">No posts found!</div>';
+
+	}
+
+	wp_reset_postdata();
+
+}
+
+
+
+/**
  * Easy static images. 
  *  
  * No more fucking around with get_template_directory_uri
@@ -93,9 +136,7 @@ function get_the_breadcrumb() {
 
 		return $crumbs;
 
-	} else {
-		return false;
-	}
-
+	} 
+	
 }
 
