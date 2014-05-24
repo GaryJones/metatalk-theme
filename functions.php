@@ -1,35 +1,9 @@
 <?php
 
-/**
- * Plugin activation. 
- *  
- * Easily install the most common plugins we use.
- *
- */
-
 require_once('inc/class-plugin-activation.php');
 require_once('inc/plugin-activation.php');
-
-/**
- * Theme settings. 
- *  
- * Settings that can be filled in by us or the user.
- *
- */
-
 require_once('inc/theme-options.php');
-
-
-
-/**
- * Development snippets. 
- *  
- * Code snippets to use in the theme.
- *
- */
-
 require_once('inc/snippets.php');
-
 
 
 /**
@@ -48,6 +22,28 @@ add_action('init', 'register_custom_menu');
 
 add_theme_support( 'post-thumbnails' );
 
+
+
+/**
+ * Javascript & css
+ * 
+ * All Javascript & css files. Looks for a css/main.css file
+ * 
+ */
+
+function load_scripts() {
+
+	wp_deregister_script( 'jquery' );
+
+	wp_register_script( 'jquery', '//code.jquery.com/jquery-1.11.0.min.js', array(), null, true );
+	//place all other scripts here
+    wp_register_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), null, true  );
+
+	wp_enqueue_script( 'main' );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
 
 /**
