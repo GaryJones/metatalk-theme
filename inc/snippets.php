@@ -8,7 +8,7 @@
  * $template_name : the name of the template (without php), place the file in the templates folder
  * $args : arguments for the loop (http://codex.wordpress.org/Class_Reference/WP_Query)
  *
- * example <?php the_loop('events',array('post_type' => 'event')); ?>
+ * Example :  <?php the_loop('events',array('post_type' => 'event')); ?>
  *
  */
 
@@ -27,7 +27,7 @@ function the_loop($template_name=false,$args=array('post_type' => 'post')) {
 		while ($query->have_posts()) {
 			$query->the_post();
 
-			include_once($template);
+			require($template);
 
 		}
 
@@ -51,6 +51,9 @@ function the_loop($template_name=false,$args=array('post_type' => 'post')) {
  * $src : image source, relative from the theme directory
  * $attributes : array of html attributes (alt, id, class ...)
  * $format : set to false if you only want an url instead of an img tag
+ *
+ *	Example : <?php echo img('img/logo.png',array('alt' => 'Blabla', 'class' => 'logo')); ?>
+ *
  */
 
 function img($src = false, $attributes = array(), $format = true) {
@@ -83,6 +86,14 @@ function img($src = false, $attributes = array(), $format = true) {
  * Get the ID of the top page. 
  *  
  * Get the ID of the top parent when working with hierarchical pages or posts.
+ *  
+ * Example:
+ *
+ *	Parentpage (id : 3)
+ *		- child page
+ *		- child page
+ *			- child page => <?php echo get_the_title(get_top_id()) ?> on this page returns the title of Parentpage
+ *	
  *
  */
 
