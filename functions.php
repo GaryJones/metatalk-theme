@@ -2,7 +2,6 @@
 
 require_once('inc/class-plugin-activation.php');
 require_once('inc/plugin-activation.php');
-require_once('inc/theme-options.php');
 require_once('inc/snippets.php');
 
 

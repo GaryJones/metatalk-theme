@@ -540,7 +540,7 @@ select,
 textarea,
 .pure-g [class*="pure-u"],
 .pure-g-r [class*="pure-u"] {
-  font-family: sans-serif;
+  font-family: 'sans-serif';
   font-size: 16px;
 }
 h1,
@@ -585,3 +585,22 @@ input[type="text"]:focus {
   outline: none;
 }
 /* YOUR CODE */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.pure-g-padding > [class*="pure-u"],
+.pure-g-padding > [class*="pure-u"],
+.pure-u-padding {
+  -ms-box-sizing: 'border-box';
+  -moz-box-sizing: 'border-box';
+  -webkit-box-sizing: 'border-box';
+  box-sizing: 'border-box';
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.pure-g-padding {
+  padding: 0 10px;
+}

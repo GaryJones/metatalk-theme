@@ -1,6 +1,7 @@
 /* VARIABLES */
 
 @side_padding : 10px;
+@container_width : 1200px;
 
 @breakpoint_mobile : 768px;
 @breakpoint_tablet : 900px;
@@ -8,6 +9,10 @@
 @breakpoint_big    : 1200px;
 
 @grid_gutter : 20px;
+
+@primary_font : 'sans-serif';
+@secundary_font : 'sans-serif';
+@base_font_size : 16px;
 
 
 
@@ -28,4 +33,20 @@
 
 body {
 	
+}
+
+.container {
+	max-width: @container_width;
+	margin: 0 auto;
+}
+
+.pure-g-padding > [class *= "pure-u"],
+.pure-g-padding > [class *= "pure-u"],
+.pure-u-padding {
+	.border-box();
+	padding: 0 @grid_gutter;
+}
+
+.pure-g-padding {
+	padding: 0 @grid_gutter / 2;
 }
