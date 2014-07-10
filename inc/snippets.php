@@ -12,12 +12,16 @@
  *
  */
 
-function the_loop($template_name=false,$args=array('post_type' => 'post')) {
+function the_loop($template_name=false,$args=array()) {
 
 	$template = get_template_directory().'/'.'templates/'.$template_name.'.php';
 
 	if(!file_exists($template)) {
 		echo '<div class="theme-error">Template <i>'.$template.'</i> not found!</div>';
+	}
+
+	if(empty($args['post_type'])) {
+		$args['post_type'] = $template_name;
 	}
 
 	$query = new WP_Query($args);
@@ -40,6 +44,7 @@ function the_loop($template_name=false,$args=array('post_type' => 'post')) {
 	wp_reset_postdata();
 
 }
+
 
 
 
