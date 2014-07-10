@@ -14,12 +14,14 @@
 @secundary_font : 'sans-serif';
 @base_font_size : 16px;
 
+@blue : #1E7198;
+@red : #B63426;
+@grey : #F4F7F8;
+
 
 
 /* IMPORTS */
 
-@import "normalize.less";
-@import "grid.less";
 @import "snippets.less";
 @import "typo.less";
 @import "buttons.less";
@@ -40,13 +42,12 @@ body {
 	margin: 0 auto;
 }
 
-.pure-g-padding > [class *= "pure-u"],
-.pure-g-padding > [class *= "pure-u"],
-.pure-u-padding {
-	.border-box();
-	padding: 0 @grid_gutter;
-}
+@media (min-width: @breakpoint_mobile) {
 
-.pure-g-padding {
-	padding: 0 @grid_gutter / 2;
+	.pure-g-padding > div {
+		.border-box();
+		padding-left: @grid_gutter;
+		padding-right: @grid_gutter;
+	}
+
 }

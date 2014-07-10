@@ -7,6 +7,8 @@
         <meta name="description" content="<?php get_bloginfo('description' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.5.0/base-min.css&pure/0.5.0/grids-min.css&pure/0.5.0/grids-responsive-min.css">
+
         <?php wp_head() ?>
 
     </head>
